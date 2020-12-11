@@ -1,0 +1,41 @@
+import destinos.*
+import personas.*
+
+describe "Tests del parcial"{
+	
+		var lanus = new Destino(
+			nombre = "Lanus"
+			, pasaje = 20
+			, caracteristicas = #{"fulbo","birra","cortes de luz","velodromo","9 de julio"}
+			, esCapital = false
+			, clima = frio
+			, cantVisitantes = 0
+		)
+		
+		var leo = new Persona (
+			criterio = tocToc
+			, humor = true
+			)
+		
+		var ale = new Persona (
+			criterio = comodo
+			, humor = true
+			)
+	
+	test "Test de consulta" {
+		assert.that(lanus.esCopado())
+	}
+	
+	test "Test de efecto" {
+		leo.viajarA(lanus)
+		assert.equals(lanus.cantVisitantes(),1)
+	}
+	
+	test "Test de error" {
+		assert.throwsExceptionWithMessage(
+		"No le cabe el destino a la persona", 
+		{ale.viajarA(lanus)}
+		)
+	}
+	
+}
