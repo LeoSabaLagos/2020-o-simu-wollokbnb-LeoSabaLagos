@@ -36,6 +36,14 @@ class Destino {
 	// Punto 3
 	method sumaVisitante() = cantVisitantes++
 	
+	// Punto 4
+	// Los viajes son pulentas cuando tienen un valor de pasaje de más de $200.000
+	method esPulenta() = pasaje > 200000
+	
+	method tieneMaVisitantesQue(destino2) = cantVisitantes > destino2.cantVisitantes()
+	
+	method cantVisitantes() = cantVisitantes
+	
 }
 
 ////////// Climas ////////////////

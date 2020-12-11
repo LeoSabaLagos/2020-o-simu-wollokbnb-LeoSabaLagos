@@ -27,24 +27,37 @@ class Persona {
 	// Punto 3
 	// Para viajar a estos lugares, necesitamos saber si primero se acepta un destino propuesto. 
 	method viajarA(destino){
+		// Aca se valida si se acepta el destino, si no se acepta se devuelve el mensaje correspondiente
 		self.acepta(destino)
 		
-		// A su vez, el destino suma uno a la cantidad de pasajeros que lo visitaron.
-		// agregar destino que visitó
+		// Si el destino es aceptado, el destino suma uno a la cantidad de pasajeros que lo visitaron.
+		self.visitar(destino)
+		destino.sumaVisitante()
 	}
 	
 	// Esto ocurre cuando le cabe un destino y viajó a 5 destinos o menos. 
 	method acepta(destino){
+		// Caso contrario debe expresar un mensaje acorde con el motivo de rechazo (“No le cabe el destino a la persona” o “Viajó a más de 5 destinos”). 
 		if(not self.leCabe(destino))
 			self.error("No le cabe el destino a la persona")
 		else if (self.viajoAMasDeCincoDestinos())
 			self.error("Viajó a más de 5 destinos")
-		else 
 			
 	}
-	// Caso contrario debe expresar un mensaje acorde con el motivo de rechazo (“No le cabe el destino a la persona” o “Viajó a más de 5 destinos”). 
-	
+		
 	method viajoAMasDeCincoDestinos() = destinosVisitados.size() > 5
+	
+	method visitar(destino) {
+		destinosVisitados.add(destino)
+	}
+	
+	// Punto 4
+	// Queremos saber los viajes pulentas de una persona. 
+	// Estos son los viajes que tienen un valor de pasaje de más de $200.000, ordenado por cantidad de pasajeros que visitaron cada destino. 
+	method viajesPulentas() = self.destinosPulentas().sortedBy({ destino1 , destino2 => destino1.tieneMaVisitantesQue(destino2) })
+	
+	method destinosPulentas() = destinosVisitados.filter({ destino => destino.esPulenta() })
+	
 	
 	
 }
