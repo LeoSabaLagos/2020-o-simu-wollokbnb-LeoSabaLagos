@@ -10,6 +10,8 @@ class Destino {
 	// Cada destino tiene un clima
 	const clima
 	
+	var esCapital
+	
 	// Punto 1
 	// Además se pusieron de acuerdo en saber cuando un lugar es copado. 
 	// Esto lo definieron si es lugar es barato (es decir que el pasaje sale menos de $100.000) y y además depende del clima:
@@ -22,6 +24,11 @@ class Destino {
 	
 	// Los lugares de moda son Estambul, Cuzco, Barcelona y Tokio.
 	method estaDeModa() = nombre == "Estambul" or nombre == "Cuzco" or nombre == "Barcelona" or nombre == "Tokio"
+	
+	// Cosas para el Punto 2
+	method esCapital() = esCapital
+	
+	method precioPasajeEsPar() = pasaje.even()
 	
 }
 
