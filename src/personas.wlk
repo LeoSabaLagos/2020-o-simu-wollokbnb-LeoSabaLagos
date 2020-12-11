@@ -8,6 +8,7 @@ class Persona {
 	
 	var criterio
 	
+	// Para el Punto 3 sirve
 	var destinosVisitados = #{}
 	
 	var humor 
@@ -22,6 +23,29 @@ class Persona {
 	}
 	
 	method estaDeHumor() = humor
+	
+	// Punto 3
+	// Para viajar a estos lugares, necesitamos saber si primero se acepta un destino propuesto. 
+	method viajarA(destino){
+		self.acepta(destino)
+		
+		// A su vez, el destino suma uno a la cantidad de pasajeros que lo visitaron.
+		// agregar destino que visitó
+	}
+	
+	// Esto ocurre cuando le cabe un destino y viajó a 5 destinos o menos. 
+	method acepta(destino){
+		if(not self.leCabe(destino))
+			self.error("No le cabe el destino a la persona")
+		else if (self.viajoAMasDeCincoDestinos())
+			self.error("Viajó a más de 5 destinos")
+		else 
+			
+	}
+	// Caso contrario debe expresar un mensaje acorde con el motivo de rechazo (“No le cabe el destino a la persona” o “Viajó a más de 5 destinos”). 
+	
+	method viajoAMasDeCincoDestinos() = destinosVisitados.size() > 5
+	
 	
 }
 

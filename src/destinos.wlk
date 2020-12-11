@@ -12,6 +12,9 @@ class Destino {
 	
 	var esCapital
 	
+	// Para el Punto 3
+	var cantVisitantes
+	
 	// Punto 1
 	// Además se pusieron de acuerdo en saber cuando un lugar es copado. 
 	// Esto lo definieron si es lugar es barato (es decir que el pasaje sale menos de $100.000) y y además depende del clima:
@@ -29,6 +32,9 @@ class Destino {
 	method esCapital() = esCapital
 	
 	method precioPasajeEsPar() = pasaje.even()
+	
+	// Punto 3
+	method sumaVisitante() = cantVisitantes++
 	
 }
 
