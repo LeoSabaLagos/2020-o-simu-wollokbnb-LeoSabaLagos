@@ -57,9 +57,7 @@ class Persona {
 	method viajesPulentas() = self.destinosPulentas().sortedBy({ destino1 , destino2 => destino1.tieneMaVisitantesQue(destino2) })
 	
 	method destinosPulentas() = destinosVisitados.filter({ destino => destino.esPulenta() })
-	
-	
-	
+		
 }
 
 object carlos inherits Persona {

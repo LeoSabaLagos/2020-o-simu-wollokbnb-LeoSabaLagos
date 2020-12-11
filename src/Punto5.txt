@@ -1,0 +1,13 @@
+Punto 5
+indicar un lugar donde utilizó
+polimorfismo
+	En el metodo leCabe(destino) en personas.wlk trato polimorficamente a los criterios
+	ya que todos los criterios entienden el mensaje seCumple(destino,persona), pero tienen distinto comportamiento cuando les envian el mensaje.
+	
+herencia
+	En la clase Persona utilicé herencia para Carlos, ya que necesitaba que tuviera varios atributos y metodos que tiene cualquier persona 
+	pero tambien poder redefinir el metodo seCumple(destino), que Carlos tenia un comportamiento distinto a todas las personas con ese mensaje.
+	
+composición
+	En la clase Persona utilicé composición para asignarles el criterio, ya que al atributo criterio de cada instancia persona se le asigna
+	un objeto criterio, y es muchisimo mas como para asignar correctamente las responsabilidades.
